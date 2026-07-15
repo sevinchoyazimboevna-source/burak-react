@@ -25,7 +25,7 @@ function App() {
   console.log('====================================');
   return (
     <>
-      {location.pathname === "/" ? <HomeNavbar /> : <OtherNavbar />}
+      {location.pathname === "/" ? <HomeNavbar /> : <OtherNavbar />} 
       <Switch>
         <Route path="/products">
           <ProductsPage />
@@ -46,6 +46,9 @@ function App() {
       <Footer />
     </>)
 }
+
+/** TODO */
+
 
 
 
