@@ -51,7 +51,7 @@ class Test extends React.Component {
         <button
           type="button"
           onClick={this.changeColor}
-        >Chane Detail</button>
+        >Change Detail</button>
       </div>
     );
   }
