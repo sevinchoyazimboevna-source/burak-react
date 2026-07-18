@@ -1,5 +1,4 @@
 // react app state
-
 import { Member } from "./member";
 import { Product } from "./product";
 import ProductsPage from './../../app/screens/productsPage/index';
@@ -8,8 +7,6 @@ export interface AppRootState {
     homePage: HomePageState;  
     // productsPage: ProductsPage;   
 }
-
-
 //HOMEPAGE
 export interface HomePageState {
     popularDishes: Product[];
@@ -18,6 +15,5 @@ export interface HomePageState {
 }
 
 //PRODUCTS PAGE
-
 
 //ORDERS PAGE
