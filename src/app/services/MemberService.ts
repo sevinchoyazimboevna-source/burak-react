@@ -44,7 +44,7 @@ class MemberService {
       const member: Member = result.data.member;
       console.log("member:", member);
 
-      localStorage.setItem("memberData", JSON.stringify(member));
+      localStorage.setItem("memberData", JSON.stringify(member)); //signup bolgan userni memeberdata bilan jsoon formatda saqlash
 
       return member;
     } catch (err) {

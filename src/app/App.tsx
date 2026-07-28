@@ -33,9 +33,24 @@ const handleLoginClose = () => setLoginOpen(false);
   return (
     <>
       {location.pathname === "/" ? (
-      <HomeNavbar cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} onDeleteAll={onDeleteAll}/> 
+      <HomeNavbar 
+      cartItems={cartItems} 
+      onAdd={onAdd} 
+      onRemove={onRemove} 
+      onDelete={onDelete} 
+      onDeleteAll={onDeleteAll}
+      setSignupOpen={setSignupOpen}
+      setLoginOpen={setLoginOpen}/> 
       ):( 
-      <OtherNavbar cartItems={cartItems} onAdd={onAdd} onRemove={onRemove} onDelete={onDelete} onDeleteAll={onDeleteAll}/> 
+      <OtherNavbar 
+      cartItems={cartItems} 
+      onAdd={onAdd} 
+      onRemove={onRemove} 
+      onDelete={onDelete} 
+      onDeleteAll={onDeleteAll}
+      setSignupOpen={setSignupOpen}
+      setLoginOpen={setLoginOpen}
+      /> 
       )}
       <Switch>
         <Route path="/products">
