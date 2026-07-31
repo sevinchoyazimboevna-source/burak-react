@@ -22,7 +22,7 @@ const actionDispatch = (dispatch: Dispatch) => ({
     setPopularDishes: (data: Product[]) => dispatch(setPopularDishes(data)),
     setNewDishes: (data: Product[]) => dispatch(setNewDishes(data)),
     setTopUsers: (data: Member[]) => dispatch(setTopUsers(data))
-})
+});
 
 
 export default function HomePage() {
