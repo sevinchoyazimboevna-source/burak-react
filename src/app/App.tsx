@@ -23,6 +23,7 @@ import MemberService from "./services/MemberService";
 import { useGlobals } from "./hooks/useGlobals";
 
 
+
 function App() {
   const location = useLocation();
   const {setAuthMember} = useGlobals();
@@ -33,7 +34,7 @@ function App() {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
 
 
-//HANDLERS
+//HANDLER
 const handleSignupClose = () => setSignupOpen(false);
 const handleLoginClose = () => setLoginOpen(false);
 

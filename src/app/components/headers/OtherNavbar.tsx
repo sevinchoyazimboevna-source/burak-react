@@ -1,10 +1,10 @@
 import { Box, Button, Container, ListItemIcon, Menu, MenuItem, Stack } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
-import { CartItem } from "../../../lib/types/search";
 import { useGlobals } from "../../hooks/useGlobals";
 import { Logout } from "@mui/icons-material";
 import { serverApi } from "../../../lib/config";
+import { CartItem } from "../../../lib/types/search";
 
 interface OtherNavbarProps {
     cartItems: CartItem[];
@@ -57,12 +57,7 @@ export default function OtherNavbar(props: OtherNavbarProps) {
                             <NavLink activeClassName={"underline"} to="/help">Help</NavLink>
                         </Box>
 
-                        <Basket 
-                        cartItems={cartItems}
-                        onAdd={onAdd} 
-                        onRemove={onRemove} 
-                        onDelete={onDelete} 
-                        onDeleteAll={onDeleteAll}/>
+                        <Basket/>
 
                         {!authMember ? (
                             <Box>
