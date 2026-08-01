@@ -5,7 +5,7 @@ const useBasket = () => {
     //refresh qilsaham ozgarib ketmay oz holida turadi
       const cartJson: string | null = localStorage.getItem("cartData");
       const currentCart = cartJson ? JSON.parse(cartJson) : [];
-      const [cartItems, setCartItems] = useState<CartItem[]>([currentCart]);
+      const [cartItems, setCartItems] = useState<CartItem[]>(currentCart);
 
 
       //Handlers
