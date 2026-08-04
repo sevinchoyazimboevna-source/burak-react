@@ -1,6 +1,6 @@
 import axios from "axios";
 import { serverApi } from "../../lib/config";
-import { LoginInput, Member, MemberInput } from "../../lib/types/member";
+import { LoginInput, Member, MemberInput, MemberUpdateInput } from "../../lib/types/member";
 import { Logout } from '@mui/icons-material';
 
 class MemberService {
@@ -82,6 +82,34 @@ class MemberService {
       return result.data.Logout;
     } catch (err) {
       console.log("Error,  logout:", err);
+      throw err;
+    }
+  }
+
+  public async updateMember(input: MemberUpdateInput): Promise<Member> {
+    try {
+      const formData = new FormData();    //backendga rasimlarni backendga yuborish uchun 
+      formData.append("memberNick", input.memberNick || "");
+      formData.append("memberPhone", input.memberPhone || "");
+      formData.append("memberAddress", input.memberAddress || "");
+      formData.append("memberDesc", input.memberDesc || "");
+      formData.append("memberImage", input.memberImage || "");
+
+      const result = await axios(`${serverApi}/member/update`, {
+        method: "POST",
+        data: formData,
+        withCredentials: true,
+        headers: {
+          "Content_Type": "multipart/form-data",
+        },
+      });
+      console.log("updateMember", result);
+      const member: Member = result.data;
+      localStorage.setItem("memberData", JSON.stringify(member)); //update qilingan memberlarni localsorage ga saqlash
+      
+      return member;
+    } catch (err) {
+      console.log("Error,  updateMember:", err);
       throw err;
     }
   }
